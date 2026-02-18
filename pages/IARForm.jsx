@@ -839,6 +839,20 @@ export default function IarForm() {
         po_date: document.getElementById('poDate')?.value || null,
         supplier_id: supplierId,
         supplier_name: supplierName,
+        
+        // NEW FIELDS:
+        billing_invoice: document.getElementById('billingInvoice')?.value?.trim() || null,
+        invoice_date: document.getElementById('invoiceDate')?.value || null,
+        delivery_receipt: document.getElementById('deliveryReceipt')?.value?.trim() || null,
+        delivery_date: document.getElementById('deliveryDate')?.value || null,
+        obligation_number: document.getElementById('obligationNumber')?.value?.trim() || null,
+        obligation_date: document.getElementById('obligationDate')?.value || null,
+        inspector_name: document.getElementById('inspectorName')?.value?.trim() || null,
+        date_inspected: document.getElementById('dateInspected')?.value || null,
+        supporting_docs: document.getElementById('supportingDocs')?.value || null,
+        custodian_name: document.getElementById('custodianName')?.value?.trim() || null,
+        date_received: document.getElementById('dateReceived')?.value || null,
+        
         items: flattenedItems,
         is_complete: isComplete,
         partial_details: isPartial ? document.getElementById('partialDetails')?.value : null
@@ -861,6 +875,17 @@ export default function IarForm() {
           partial_details: isPartial ? document.getElementById('partialDetails')?.value : null,
           selected_offices: selectedOffices,
           office_items: officeItems,
+          supporting_docs: document.getElementById('supportingDocs')?.value || null,
+          billing_invoice: document.getElementById('billingInvoice')?.value?.trim() || null,
+          invoice_date: document.getElementById('invoiceDate')?.value || null,
+          delivery_receipt: document.getElementById('deliveryReceipt')?.value?.trim() || null,
+          delivery_date: document.getElementById('deliveryDate')?.value || null,
+          obligation_number: document.getElementById('obligationNumber')?.value?.trim() || null,
+          obligation_date: document.getElementById('obligationDate')?.value || null,
+          inspector_name: document.getElementById('inspectorName')?.value?.trim() || null,
+          date_inspected: document.getElementById('dateInspected')?.value || null,
+          custodian_name: document.getElementById('custodianName')?.value?.trim() || null,
+          date_received: document.getElementById('dateReceived')?.value || null,
         }]);
       
       if (backupError) {
@@ -1109,7 +1134,7 @@ export default function IarForm() {
                 </div>
                 <div className="form-group">
                   <label>Supporting Documents <span className="required">*</span></label>
-                  <select required>
+                  <select id="supportingDocs" required>
                     <option value="">-- Select Document --</option>
                     <option value="None">None</option>
                     <option value="Warranty Certificate">Warranty Certificate</option>
@@ -1130,19 +1155,19 @@ export default function IarForm() {
                 )}
                 <div className="form-group">
                   <label>Billing Invoice Number <span className="required">*</span></label>
-                  <input type="text" placeholder="Enter billing invoice number" required />
+                  <input id="billingInvoice" type="text" placeholder="Enter billing invoice number" required />
                 </div>
                 <div className="form-group">
                   <label>Invoice Date <span className="required">*</span></label>
-                  <input type="date" required />
+                  <input id="invoiceDate"type="date" required />
                 </div>
                 <div className="form-group">
                   <label>Delivery Receipt Number <span className="required">*</span></label>
-                  <input type="text" placeholder="Enter delivery receipt number" required />
+                  <input type="text" id="deliveryReceipt" placeholder="Enter delivery receipt number" required />
                 </div>
                 <div className="form-group">
                   <label>Delivery Date <span className="required">*</span></label>
-                  <input type="date" required />
+                  <input id="deliveryDate" type="date" required />
                 </div>
               </div>
             </div>
@@ -1161,11 +1186,11 @@ export default function IarForm() {
                 </div>
                 <div className="form-group">
                   <label>Obligation Number <span className="required">*</span></label>
-                  <input type="text" placeholder="Enter obligation number" required />
+                  <input id="obligationNumber" type="text" placeholder="Enter obligation number" required />
                 </div>
                 <div className="form-group">
                   <label>Obligation Date <span className="required">*</span></label>
-                  <input type="date" required />
+                  <input id="obligationDate" type="date" required />
                 </div>
                 <div className="form-group full-width">
                   <label>Requisitioning Offices/Departments <span className="required">*</span></label>
@@ -1813,22 +1838,22 @@ export default function IarForm() {
                   <h4>Property Inspector</h4>
                   <div className="form-group">
                     <label>Name <span className="required">*</span></label>
-                    <input type="text" placeholder="Enter inspector name" required />
+                    <input id="inspectorName" type="text" placeholder="Enter inspector name" required />
                   </div>
                   <div className="form-group">
                     <label>Date Inspected <span className="required">*</span></label>
-                    <input type="date" required />
+                    <input id="dateInspected" type="date" required />
                   </div>
                 </div>
                 <div className="signature-box">
                   <h4>Property Custodian</h4>
                   <div className="form-group">
                     <label>Name <span className="required">*</span></label>
-                    <input type="text" defaultValue="APRIL JOY A. CELESTIAL" required />
+                    <input id="custodianName" type="text" defaultValue="APRIL JOY A. CELESTIAL" required />
                   </div>
                   <div className="form-group">
                     <label>Date Received <span className="required">*</span></label>
-                    <input type="date" required />
+                    <input id="dateReceived" type="date" required />
                   </div>
                 </div>
               </div>
